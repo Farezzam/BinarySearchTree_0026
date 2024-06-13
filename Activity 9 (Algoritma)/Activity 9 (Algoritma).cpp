@@ -25,33 +25,33 @@ public:
 
 	BinaryTree()
 	{
-		ROOT = nullptr; //
+		ROOT = nullptr; // Initializing ROOT to NULL
 	}
 
-	void insert(string element) //
+	void insert(string element) // Insert a node in the binary search tree
 	{
-		Node* newNode = new Node(element, nullptr, nullptr); //
-		newNode->info = element; //
-		newNode->leftchild = nullptr; //
-		newNode->rightchild = nullptr; //
+		Node* newNode = new Node(element, nullptr, nullptr); // Allocate memory for the new node
+		newNode->info = element; // Assign value to the data field of the new node
+		newNode->leftchild = nullptr; // Make the left child of the new node point to NULL
+		newNode->rightchild = nullptr; // Make the right child of the new node point NULL
 
 		Node* parent = nullptr;
 		Node* currentNode = nullptr;
-		search(element, parent, currentNode); //
+		search(element, parent, currentNode); // locate the node which will be the parent of the node to be inserted
 
-		if (parent == nullptr) //
+		if (parent == nullptr) // If the parent is NULL (Tree is empty)
 		{
-			ROOT = newNode; //
-			return;
+			ROOT = newNode; // Mark the new node as ROOT
+			return; // EXIT
 		}
 
-		if (elemnt < parent->info) //
+		if (elemnt < parent->info) // if the value in the data field of the new node is less than that of the parent
 		{
-			parent->leftchild = newNode; //
+			parent->leftchild = newNode; // Make the left child of the parent point to the new node
 		}
-		else if (element > parent->info) //
+		else if (element > parent->info) // If the value in the data field of the new node is grater than that of the parent
 		{
-			parent->rightchild = newNode; // 
+			parent->rightchild = newNode; // Make the right child of the parent point to the new node
 		}
 	}
 };
